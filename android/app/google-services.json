@@ -7,7 +7,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:593884830312:android:7f24fac6f441b237efb9dd",
+        "mobilesdk_app_id": "1:593884830312:android:35c361ea03ac9267efb9dd",
         "android_client_info": {
           "package_name": "com.example.simple_push_notification"
         }
