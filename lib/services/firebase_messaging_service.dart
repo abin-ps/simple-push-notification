@@ -9,21 +9,33 @@ import 'package:simple_push_notification/services/local_notifications_service.da
 class FirebaseMessagingService {
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
 
+
+
   //simple push notification channel group
   final _simplePushNotificChannelGrp = const AndroidNotificationChannelGroup(
-    'simple_push_notific_channel',
-    'Simple Push Notification Channel',
+    // 'fcm_simple_push_notification_channel',
+    // 'Simple Push Notification Channel',
+    "CHAT_MESSAGES",
+    "Chats",
     description: 'This channel is used for testing notification on all the possible states of app',
   );
 
   //android notification channel
+  // final AndroidNotificationChannel androidNotificChannel = const AndroidNotificationChannel(
+  //   'fcm_simple_push_notification_channel',
+  //   'Simple Push Notification Channel',
+  //   description: 'This channel is used for testing notification on all the possible states of app',
+  //   importance: Importance.max,
+  // );
+
+//custom notification channel - method channel
   final AndroidNotificationChannel androidNotificChannel = const AndroidNotificationChannel(
-    'simple_push_notific_channel',
-    'Simple Push Notification Channel',
+"CHAT_MESSAGES",
+    "Chats",
+  
     description: 'This channel is used for testing notification on all the possible states of app',
     importance: Importance.max,
   );
-
   // final AndroidNotificationChannel _backgroundHeadupChannel = const AndroidNotificationChannel(
   //   'background_headup_notification_channel',
   //   'Background Headup Notification Channel',

@@ -23,13 +23,17 @@ if (flutterVersionName == null) {
 }
 
 // apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     namespace "com.example.simple_push_notification"
-    compileSdk flutter.compileSdkVersion
+    compileSdk 34
     ndkVersion flutter.ndkVersion
 
     compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -67,4 +71,14 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.2'
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+    // implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//     implementation ('org.jetbrains.kotlin:kotlin-stdlib:1.8.22') {
+//     exclude group: 'org.jetbrains', module: 'kotlin-stdlib-jdk7'
+//     exclude group: 'org.jetbrains', module: 'kotlin-stdlib-jdk8'
+// }
+
+}
